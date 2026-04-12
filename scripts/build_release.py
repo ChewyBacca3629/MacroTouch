@@ -199,10 +199,6 @@ def package_windows(version: str, arch: str) -> list[Path]:
     release_dir = ensure_release_dir()
     artifacts: list[Path] = []
 
-    portable_zip = release_dir / f"{APP_NAME}-{version}-windows-{arch}-portable.zip"
-    add_directory_to_zip(portable_zip, app_dist_dir())
-    artifacts.append(portable_zip)
-
     iscc = shutil.which("iscc")
     if iscc and ISS_FILE.exists():
         subprocess.run(
@@ -220,6 +216,9 @@ def package_windows(version: str, arch: str) -> list[Path]:
             shutil.copy2(installer, release_dir / installer.name)
             artifacts.append(release_dir / installer.name)
     else:
+        portable_zip = release_dir / f"{APP_NAME}-{version}-windows-{arch}-portable.zip"
+        add_directory_to_zip(portable_zip, app_dist_dir())
+        artifacts.append(portable_zip)
         print("Inno Setup was not found; created portable ZIP only.", file=sys.stderr)
 
     return artifacts
