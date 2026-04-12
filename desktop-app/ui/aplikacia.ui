@@ -1,0 +1,1458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MacroTouchMainWindow</class>
+ <widget class="QMainWindow" name="MacroTouchMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1524</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MacroTouch Configurator</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="root">
+    <property name="leftMargin">
+     <number>16</number>
+    </property>
+    <property name="topMargin">
+     <number>10</number>
+    </property>
+    <property name="rightMargin">
+     <number>16</number>
+    </property>
+    <property name="bottomMargin">
+     <number>10</number>
+    </property>
+    <property name="spacing">
+     <number>14</number>
+    </property>
+    <item row="0" column="0" colspan="4">
+     <widget class="QFrame" name="TopBar">
+      <layout class="QHBoxLayout" name="topBarLay">
+       <property name="leftMargin">
+        <number>16</number>
+       </property>
+       <property name="topMargin">
+        <number>8</number>
+       </property>
+       <property name="rightMargin">
+        <number>16</number>
+       </property>
+       <property name="bottomMargin">
+        <number>8</number>
+       </property>
+        <item>
+         <widget class="QFrame" name="BrandBadge">
+          <property name="frameShape">
+           <enum>QFrame::Shape::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Plain</enum>
+          </property>
+          <layout class="QHBoxLayout" name="brandLay">
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>4</number>
+           </property>
+           <property name="rightMargin">
+            <number>10</number>
+           </property>
+           <property name="bottomMargin">
+            <number>4</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="title">
+             <property name="font">
+              <font>
+               <family>Segoe UI</family>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>MacroTouch Configurator</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="chip1">
+             <property name="text">
+              <string>ESP32-S3</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       <item>
+        <spacer name="topsp">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="barActions" />
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="4">
+     <widget class="QTabWidget" name="tabMain">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tabMacroTouch">
+       <attribute name="title">
+        <string>MacroTouch</string>
+       </attribute>
+       <layout class="QGridLayout" name="macroGrid">
+        <property name="spacing">
+         <number>14</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QWidget" name="leftCol" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>280</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>360</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <layout class="QVBoxLayout" name="leftColV">
+           <item>
+            <widget class="QGroupBox" name="grpProfiles">
+             <property name="title">
+              <string>Profiles</string>
+             </property>
+             <layout class="QVBoxLayout" name="profilesLay">
+              <item>
+               <layout class="QHBoxLayout" name="profilesHeader">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_4">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_2">
+                    <item>
+                     <widget class="QPushButton" name="btnAddProfile">
+                      <property name="text">
+                       <string>Add</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnRemoveProfile">
+                      <property name="text">
+                       <string>Remove</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnEditProfile">
+                      <property name="text">
+                       <string>Edit</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QListWidget" name="listProfiles">
+                <item>
+                 <property name="text">
+                  <string>Default</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Audio</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Apps</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Gaming</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Stream</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="grpLayout">
+             <property name="title">
+              <string>Layout</string>
+             </property>
+             <layout class="QGridLayout" name="layoutGrid">
+              <item row="0" column="0">
+               <widget class="QLabel" name="lblRows">
+                <property name="text">
+                 <string>Rows</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QSpinBox" name="spinRows">
+                <property name="styleSheet">
+                 <string notr="true" />
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>10</number>
+                </property>
+                <property name="value">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="lblCols">
+                <property name="text">
+                 <string>Columns</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QSpinBox" name="spinCols">
+                <property name="styleSheet">
+                 <string notr="true" />
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>10</number>
+                </property>
+                <property name="value">
+                 <number>4</number>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0" colspan="2">
+               <layout class="QHBoxLayout" name="layoutFooter">
+                <item>
+                 <widget class="QLabel" name="chipGrid">
+                  <property name="text">
+                   <string>Grid</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="spacerL">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btnResetLayout">
+                  <property name="text">
+                   <string>Reset layout</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="grpPreview">
+          <property name="title">
+           <string>Board Preview</string>
+          </property>
+          <layout class="QVBoxLayout" name="previewV">
+           <item>
+            <layout class="QHBoxLayout" name="gridRow">
+             <item>
+              <widget class="QFrame" name="BoardBezel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>480</width>
+               <height>320</height>
+              </size>
+             </property>
+               <layout class="QVBoxLayout" name="bezelLay">
+                <property name="leftMargin">
+                 <number>12</number>
+                </property>
+                <property name="topMargin">
+                 <number>12</number>
+                </property>
+                <property name="rightMargin">
+                 <number>12</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>12</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="gridCanvas" native="true">
+                  <layout class="QVBoxLayout" name="gridCanvasV">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <item alignment="Qt::AlignmentFlag::AlignCenter">
+                    <widget class="QFrame" name="displayFrame">
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <layout class="QGridLayout" name="gridPreviewLayout">
+                   <property name="spacing">
+                    <number>16</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="pushButton_5">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QPushButton" name="pushButton_7">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="2">
+                    <widget class="QPushButton" name="pushButton_10">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="2">
+                    <widget class="QPushButton" name="pushButton_11">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="3">
+                    <widget class="QPushButton" name="pushButton_14">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QPushButton" name="pushButton_9">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="3">
+                    <widget class="QPushButton" name="pushButton_12">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QPushButton" name="pushButton_4">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QPushButton" name="pushButton_6">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QPushButton" name="pushButton_3">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="baseSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QPushButton" name="pushButton_8">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="3">
+                    <widget class="QPushButton" name="pushButton_13">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>120</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string />
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QWidget" name="rightCol" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>420</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>560</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <layout class="QVBoxLayout" name="rightColV">
+           <item>
+           <widget class="QGroupBox" name="grpButtonSettings">
+             <property name="title">
+              <string>Button Settings</string>
+             </property>
+             <layout class="QGridLayout" name="btnGrid">
+              <item row="1" column="0">
+               <widget class="QLabel" name="lblName">
+                <property name="text">
+                 <string>Name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <layout class="QHBoxLayout" name="nameLay">
+                <item>
+                 <widget class="QLineEdit" name="lineName">
+                  <property name="text">
+                   <string>PlayMusic</string>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Button label</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btnOpenStyle">
+                  <property name="text">
+                   <string>Style…</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="lblIcon">
+                <property name="text">
+                 <string>Icon</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <layout class="QHBoxLayout" name="iconLay">
+                <item>
+                 <widget class="QLineEdit" name="lineIconPath">
+                  <property name="placeholderText">
+                   <string>Choose...</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btnBrowseIcon">
+                  <property name="text">
+                   <string>Browse</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="lblAction">
+                <property name="text">
+                 <string>Action</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QComboBox" name="comboAction" />
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="lblPath">
+                <property name="text">
+                 <string>Path</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="2">
+               <layout class="QHBoxLayout" name="pathLay">
+                <item>
+                 <widget class="QLineEdit" name="linePath">
+                  <property name="placeholderText">
+                   <string>C:\\Program Files\\...</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btnBrowsePath">
+                  <property name="text">
+                   <string>Browse</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="5" column="2">
+               <widget class="QPushButton" name="btnClearButton">
+                <property name="text">
+                 <string>Clear button</string>
+                </property>
+               </widget>
+              </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="grpProfileModeInfo">
+            <property name="visible">
+             <bool>false</bool>
+            </property>
+            <property name="title">
+             <string>Profile Mode</string>
+            </property>
+            <layout class="QVBoxLayout" name="profileModeInfoV">
+             <item>
+              <widget class="QLabel" name="lblProfileModeBadge">
+               <property name="text">
+                <string>MIXER</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblProfileModeTitle">
+               <property name="text">
+                <string>Live audio mixer</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblProfileModeDescription">
+               <property name="text">
+                <string>This profile uses a dedicated preview instead of editable grid buttons.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+               <property name="gray" stdset="0">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblProfileModeHint">
+               <property name="text">
+                <string>Hardware inputs below stay available across profiles.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+               <property name="gray" stdset="0">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="grpHardwareInputs">
+             <property name="title">
+              <string>Hardware Inputs</string>
+             </property>
+             <layout class="QGridLayout" name="hwGrid">
+              <item row="2" column="0">
+               <widget class="QLabel" name="lblBtnA">
+                <property name="text">
+                 <string>Button A</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="lblBtnB">
+                <property name="text">
+                 <string>Button B</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="lblPot">
+                <property name="text">
+                 <string>Encoder / Potentiometer</string>
+                 </property>
+                </widget>
+               </item>
+              <item row="5" column="0">
+               <widget class="QComboBox" name="comboBtnB" />
+              </item>
+              <item row="3" column="0">
+               <widget class="QComboBox" name="comboBtnA" />
+              </item>
+              <item row="1" column="0">
+               <widget class="QComboBox" name="comboPot">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QPushButton" name="btnSave">
+                <property name="text">
+                 <string>Apply to all profiles</string>
+                 </property>
+                </widget>
+               </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="grpDeviceSync">
+             <property name="title">
+              <string>Upload</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_2">
+              <item row="0" column="0">
+               <widget class="QPushButton" name="btnUploadESP">
+                <property name="text">
+                 <string>Upload to ESP</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="rightColSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabSmartHome">
+       <attribute name="title">
+        <string>Smart Home</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="smartMainV">
+        <item>
+         <widget class="QGroupBox" name="grpSmartNetwork">
+          <property name="title">
+           <string>Smart Home – Network</string>
+          </property>
+          <layout class="QGridLayout" name="gridSmartNetwork">
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblSmartSSID">
+             <property name="text">
+              <string>WiFi SSID</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lblSmartPass">
+             <property name="text">
+              <string>WiFi Password</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineSmartPass">
+             <property name="echoMode">
+              <enum>QLineEdit::EchoMode::Password</enum>
+             </property>
+             <property name="placeholderText">
+              <string>********</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineSmartSSID">
+             <property name="placeholderText">
+              <string>MyWiFi</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblSmartBaseUrl">
+             <property name="text">
+              <string>Base URL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineSmartBaseUrl">
+             <property name="placeholderText">
+              <string>http://192.168.0.123</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QPushButton" name="btnSmartBaseSave">
+             <property name="text">
+              <string>Uložiť IP</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpSmartRelays">
+          <property name="title">
+           <string>Smart Home – Relays</string>
+          </property>
+          <layout class="QGridLayout" name="gridSmartRelays">
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblSmartRelay1">
+             <property name="text">
+              <string>Relay 1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineSmartRelay1">
+             <property name="placeholderText">
+              <string>Lights</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="btnSmartRelay1">
+             <property name="text">
+              <string>Toggle</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lblSmartRelay2">
+             <property name="text">
+              <string>Relay 2</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineSmartRelay2">
+             <property name="placeholderText">
+              <string>LED strip</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="btnSmartRelay2">
+             <property name="text">
+              <string>Toggle</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblSmartRelay3">
+             <property name="text">
+              <string>Relay 3</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineSmartRelay3">
+             <property name="placeholderText">
+              <string>Fan</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QPushButton" name="btnSmartRelay3">
+             <property name="text">
+              <string>Toggle</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="lblSmartRelay4">
+             <property name="text">
+              <string>Relay 4</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="lineSmartRelay4">
+             <property name="placeholderText">
+              <string>Other</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QPushButton" name="btnSmartRelay4">
+             <property name="text">
+              <string>Toggle</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpSmartUpload">
+          <property name="title">
+           <string>Smart Home – Upload configuration</string>
+          </property>
+          <layout class="QGridLayout" name="gridSmartUpload">
+           <item row="0" column="0">
+            <widget class="QPushButton" name="btnUploadSmartHome">
+             <property name="text">
+              <string>Upload Smart Home config</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="smartSpacerBottom">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabDisplay">
+       <attribute name="title">
+        <string>Display</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="displayMainV">
+        <item>
+         <widget class="QGroupBox" name="grpScreensaver">
+          <property name="title">
+           <string>Screensaver</string>
+          </property>
+          <layout class="QGridLayout" name="gridScreensaver">
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblScrEnable">
+             <property name="text">
+              <string>Enable</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="chkScrEnable">
+             <property name="text">
+              <string>On</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lblScrIdle">
+             <property name="text">
+              <string>Idle (s)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="spinScrIdle" />
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblScrTimeSize">
+             <property name="text">
+              <string>Time size</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="spinScrTimeSize" />
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="lblScrTimeColor">
+             <property name="text">
+              <string>Time color</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="lineScrTimeColor">
+             <property name="placeholderText">
+              <string>#F0F0F0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QPushButton" name="btnScrTimePick">
+             <property name="text">
+              <string>Pick</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="lblScrBgColor">
+             <property name="text">
+              <string>Background</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="lineScrBgColor">
+             <property name="placeholderText">
+              <string>#080C12</string>
+             </property>
+            </widget>
+           </item>
+          <item row="4" column="2">
+           <widget class="QPushButton" name="btnScrBgPick">
+            <property name="text">
+             <string>Pick</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="lblScrBgImage">
+            <property name="text">
+             <string>Background image</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="lineScrBgImage">
+            <property name="placeholderText">
+             <string>optional image path</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QPushButton" name="btnScrBgBrowse">
+            <property name="text">
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="lblScrLabelText">
+            <property name="text">
+             <string>Label text</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLineEdit" name="lineScrLabelText">
+            <property name="placeholderText">
+             <string>MacroTouch</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="lblScrLabelSize">
+            <property name="text">
+             <string>Label size</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QSpinBox" name="spinScrLabelSize" />
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="lblScrLabelColor">
+            <property name="text">
+             <string>Label color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QLineEdit" name="lineScrLabelColor">
+            <property name="placeholderText">
+             <string>#788296</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="2">
+           <widget class="QPushButton" name="btnScrLabelPick">
+            <property name="text">
+             <string>Pick</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="lblScrTimeFont">
+            <property name="text">
+             <string>Time font</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QComboBox" name="comboScrTimeFont" />
+          </item>
+         </layout>
+        </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpGrid">
+          <property name="title">
+           <string>Grid</string>
+          </property>
+          <layout class="QGridLayout" name="gridGrid">
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblGridBgColor">
+             <property name="text">
+              <string>Background</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineGridBgColor">
+             <property name="placeholderText">
+              <string>#000000</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="btnGridBgPick">
+             <property name="text">
+              <string>Pick</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lblGridBgImage">
+             <property name="text">
+              <string>Background image</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineGridBgImage">
+             <property name="placeholderText">
+              <string>optional image path</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="btnGridBgBrowse">
+             <property name="text">
+              <string>Browse</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblDisplayHint">
+          <property name="text">
+           <string>Changes apply after Upload to ESP.</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="displaySpacerBottom">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabSettings">
+      <attribute name="title">
+       <string>Settings</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="settingsMainV">
+       <item>
+        <widget class="QGroupBox" name="grpAppearance">
+         <property name="title">
+          <string>Appearance</string>
+         </property>
+         <layout class="QGridLayout" name="gridAppearance">
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblTheme">
+            <property name="text">
+             <string>Theme</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="comboTheme">
+            <item>
+             <property name="text">
+              <string>Dark</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>OLED</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lblAccent">
+            <property name="text">
+             <string>Accent color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="lineAccentColor">
+            <property name="placeholderText">
+             <string>#2563EB</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="btnAccentPick">
+            <property name="text">
+             <string>Pick</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lblWallpaperEnable">
+            <property name="text">
+             <string>Wallpaper</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QCheckBox" name="chkWallpaperEnable">
+            <property name="text">
+             <string>Use wallpaper</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lblWallpaperPath">
+            <property name="text">
+             <string>Wallpaper path</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="lineWallpaperPath">
+            <property name="placeholderText">
+             <string>Choose image...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QPushButton" name="btnWallpaperBrowse">
+            <property name="text">
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="lblWallpaperDim">
+            <property name="text">
+             <string>Dim</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QSpinBox" name="spinWallpaperDim" />
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="settingsSpacerBottom">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="9" />
+ <resources />
+ <connections />
+</ui>

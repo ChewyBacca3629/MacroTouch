@@ -1,0 +1,13 @@
+{
+  "rows": 2,
+  "cols": 3,
+  "mode": "media",
+  "btnA_action": "play_pause",
+  "btnB_action": "next_track",
+  "pot_action": "volume",
+  "media": {
+    "provider": "spotify",
+    "show_art": true,
+    "show_progress": true
+  }
+}

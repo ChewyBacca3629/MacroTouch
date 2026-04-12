@@ -1,0 +1,8 @@
+{
+  "rows": 3,
+  "cols": 4,
+  "mode": "grid",
+  "btnA_action": "None",
+  "btnB_action": "None",
+  "pot_action": "None"
+}

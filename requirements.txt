@@ -1,0 +1,17 @@
+# Core runtime
+PyQt6
+Pillow
+pyserial
+psutil
+requests
+
+# Optional GPU stats (NVIDIA)
+pynvml
+
+# Windows-only features
+pywin32; platform_system == "Windows"
+pycaw; platform_system == "Windows"
+comtypes; platform_system == "Windows"
+wmi; platform_system == "Windows"
+winsdk; platform_system == "Windows"
+pyautogui; platform_system == "Windows"
