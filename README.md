@@ -68,21 +68,6 @@ Adjust per-application audio levels.
 
 ---
 
-# 🏗️ Project Structure
-
-MacroTouch/
-├── firmware/           # ESP32-S3 Arduino firmware
-├── desktop-app/        # Python configuration tool
-│   ├── main.py
-│   ├── modules/
-│   ├── ui/
-│   └── assets/
-├── images/             # Screenshots & device photos
-├── example-config/     # Example profiles (JSON)
-└── docs/               # Documentation
-
----
-
 # 📟 Firmware Setup
 
 1. Install Arduino IDE with ESP32 support  
