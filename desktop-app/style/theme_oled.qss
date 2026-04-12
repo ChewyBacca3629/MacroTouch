@@ -1,0 +1,407 @@
+/* ========= GLOBAL ========= */
+* {
+    color: #e5e7eb;
+    font-family: "Segoe UI", "Inter", "Roboto";
+    font-size: 13px;
+}
+
+/* Hlavné okno */
+QMainWindow {
+    background: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #000000,
+        stop:1 #050505
+    );
+}
+
+/* Popup windows */
+QDialog,
+QMessageBox {
+    background-color: #050505;
+}
+
+QDialog QLabel,
+QMessageBox QLabel {
+    color: #e5e7eb;
+}
+
+/* TabWidget / TabBar – aby to nevyzeralo ako default Qt */
+QTabWidget::pane {
+    border: none;
+}
+
+QTabBar::tab {
+    background: #000000;
+    color: #9ca3af;
+    padding: 6px 14px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background: #0d0d0d;
+    color: #e5e7eb;
+}
+
+/* ========= GROUPBOXY ========= */
+QGroupBox {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    margin-top: 12px;
+    padding: 12px;
+    background-color: rgba(12, 12, 12, 0.9);
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 14px;
+    padding: 2px 10px;
+    color: #f8fafc;
+    font-weight: 600;
+    background-color: rgba(8, 8, 8, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+}
+
+/* ========= LABELS ========= */
+QLabel {
+    color: #e5e7eb;
+}
+
+QLabel[gray="true"] {
+    color: #a1a1aa;
+    font-size: 11px;
+}
+
+#grpProfileModeInfo QLabel#lblProfileModeBadge {
+    background-color: rgba(59, 130, 246, 0.16);
+    border: 1px solid rgba(96, 165, 250, 0.28);
+    border-radius: 999px;
+    color: #dbeafe;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+}
+
+#grpProfileModeInfo QLabel#lblProfileModeTitle {
+    color: #f8fafc;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#grpProfileModeInfo QLabel#lblProfileModeDescription,
+#grpProfileModeInfo QLabel#lblProfileModeHint,
+#grpDeviceSync QLabel#lblUploadHint {
+    color: #cbd5e1;
+    padding: 0 2px 4px 2px;
+}
+
+/* ========= VSTUPY (LineEdit / Combo / Spin) ========= */
+QLineEdit,
+QComboBox,
+QSpinBox {
+    background-color: rgba(18, 18, 18, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 4px 10px;
+}
+
+/* LineEdit špecifiká */
+QLineEdit:focus {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+/* ========= COMBOBOX ========= */
+
+QComboBox {
+    padding-right: 28px; /* miesto pre „šipku“ vpravo */
+}
+
+QComboBox:focus {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+QComboBox::drop-down {
+    width: 20px;
+    border: none;
+    background: transparent;
+    subcontrol-origin: border;
+    subcontrol-position: center right;
+}
+
+/* Popup menu */
+QComboBox QAbstractItemView {
+    background-color: rgba(18, 18, 18, 0.98);
+    border: none;
+    border-radius: 8px;
+    padding: 4px;
+    selection-background-color: {{ACCENT_RGBA_25}};
+    selection-color: #ffffff;
+    outline: 0;
+}
+
+QComboBox QAbstractItemView::item {
+    border: 0px;
+}
+
+QFrame#qt_combobox_popup {
+    background-color: rgba(18, 18, 18, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+}
+
+/* ========= SPINBOX ========= */
+
+QSpinBox {
+    padding-right: 28px; /* miesto na šípky vpravo */
+}
+
+/* Up/Down tlačidlá */
+QSpinBox::up-button,
+QSpinBox::down-button {
+    width: 20px;
+    border: none;
+    background: transparent;
+    subcontrol-origin: border;
+}
+
+QSpinBox::up-button {
+    subcontrol-position: top right;
+}
+
+QSpinBox::down-button {
+    subcontrol-position: bottom right;
+}
+
+QSpinBox::up-arrow {
+    image: url("icons/arrow-up.png");
+}
+
+QSpinBox::down-arrow {
+    image: url("icons/arrow-down.png");
+}
+
+/* ========= TLAČIDLÁ ========= */
+
+QPushButton {
+    background-color: rgba(18, 18, 18, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 8px 14px;
+}
+
+QPushButton:hover {
+    background-color: rgba(28, 28, 28, 0.98);
+}
+
+QPushButton:pressed {
+    background-color: #3b3b3b;
+}
+
+/* Secondary action */
+#btnClearButton {
+    background-color: rgba(10, 10, 10, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+#btnClearButton:hover {
+    background-color: rgba(20, 20, 20, 0.85);
+}
+
+/* „Primary“ tlačidlá – Upload / Save WiFi / Upload Smart Home */
+#btnUploadESP,
+#btnSmartSendWifi,
+#btnSmartUploadConfig {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 {{ACCENT_DARK}},
+        stop:1 {{ACCENT}}
+    );
+    border: none;
+    color: #f9fafb;
+    font-weight: 600;
+}
+
+#btnUploadESP:hover,
+#btnSmartSendWifi:hover,
+#btnSmartUploadConfig:hover {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 {{ACCENT_DARKER}},
+        stop:1 {{ACCENT_LIGHT}}
+    );
+}
+
+/* Smart Home – Toggle tlačidlá nech sú kompaktné */
+#grpSmartRelays QPushButton {
+    min-width: 80px;
+}
+
+/* ========= GRID tlačidlá v náhľade ========= */
+
+#gridCanvas QPushButton {
+    background-color: rgba(10, 10, 10, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    color: #e5e7eb;
+    padding: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#gridCanvas QPushButton:hover {
+    background-color: rgba(35, 45, 70, 0.98);
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+#gridCanvas QPushButton:pressed {
+    background-color: rgba(13, 16, 22, 1.0);
+    border-color: rgba(148, 163, 184, 0.8);
+}
+
+/* Pozadie TFT displeja (fallback, ak sa nenastaví cez Display -> Grid) */
+#gridCanvas {
+    background-color: transparent;
+}
+
+#displayFrame {
+    background-color: #000000;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+}
+
+/* Rám okolo dosky */
+#BoardBezel {
+    background-color: rgba(6, 6, 6, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+}
+
+/* ========= ZOZNAM PROFILOV ========= */
+
+QListWidget {
+    background-color: rgba(34, 34, 38, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 8px;
+}
+
+QListWidget::item {
+    padding: 6px 8px;
+}
+
+QListWidget::item:selected {
+    background: rgba(99, 102, 241, 0.25);
+    border-radius: 8px;
+}
+
+/* ========= HORNÝ BAR ========= */
+
+#TopBar {
+    background-color: transparent;
+    border: none;
+}
+
+#BrandBadge {
+    background-color: rgba(12, 12, 16, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+}
+
+/* ========= KNOB ========= */
+
+#Knob {
+    background-color: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #7a8192,
+        stop:1 #14141a
+    );
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 60px;
+}
+
+/* ========= SYSTEM MONITOR (vyčistené, bez duplicít) ========= */
+
+#SystemMonitorRoot {
+    background-color: rgba(8, 8, 8, 0.92);
+    border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.28);
+    padding: 14px;
+}
+
+QLabel#SystemMonitorTitle {
+    color: #e5e7eb;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+/* kartičky CPU / GPU / RAM / FPS */
+QFrame#StatCard {
+    background-color: rgba(24, 24, 28, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+}
+
+QFrame#StatCard:hover {
+    border-color: rgba(96, 165, 250, 0.75);
+}
+
+QLabel#StatTitle {
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+QLabel#StatPrimary {
+    color: #e5e7eb;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+QLabel#StatSecondary {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+/* Usage bar */
+#UsageBarContainer {
+    background-color: rgba(12, 12, 12, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 5px;
+    min-height: 8px;
+    max-height: 8px;
+}
+
+#UsageBarFill {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 #2563eb,
+        stop:1 #60a5fa
+    );
+    border-radius: 5px;
+}
+/* Bežné tlačidlo */
+QPushButton[gridButton="true"] {
+    border-radius: 16px;
+    border: 1px solid #3a3d45;
+    background-color: #111827;
+    padding: 2px;
+}
+
+/* Hover */
+QPushButton[gridButton="true"]:hover {
+    background-color: #1f2937;
+}
+
+/* VYBRANÉ tlačidlo – highlight */
+QPushButton[gridButton="true"][selected="true"] {
+    border: 2px solid #60a5fa;      /* jasný, viditeľný rám */
+    background-color: #0f172a;      /* o niečo tmavšie pozadie */
+}

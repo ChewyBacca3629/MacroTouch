@@ -1,0 +1,392 @@
+/* ========= GLOBAL ========= */
+* {
+    color: #111827;
+    font-family: "Segoe UI", "Inter", "Roboto";
+    font-size: 13px;
+}
+
+/* Hlavné okno */
+QMainWindow {
+    background: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #f7f8fc,
+        stop:1 #eef1f5
+    );
+}
+
+/* TabWidget / TabBar */
+QTabWidget::pane {
+    border: none;
+}
+
+QTabBar::tab {
+    background: #e5e7eb;
+    color: #6b7280;
+    padding: 6px 14px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background: #ffffff;
+    color: #111827;
+}
+
+/* ========= GROUPBOXY ========= */
+QGroupBox {
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    margin-top: 12px;
+    padding: 12px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 14px;
+    padding: 2px 10px;
+    color: #111827;
+    font-weight: 600;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+/* ========= LABELS ========= */
+QLabel {
+    color: #111827;
+}
+
+QLabel[gray="true"] {
+    color: #6b7280;
+    font-size: 11px;
+}
+
+#grpProfileModeInfo QLabel#lblProfileModeBadge {
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 999px;
+    color: #1d4ed8;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+}
+
+#grpProfileModeInfo QLabel#lblProfileModeTitle {
+    color: #111827;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#grpProfileModeInfo QLabel#lblProfileModeDescription,
+#grpProfileModeInfo QLabel#lblProfileModeHint,
+#grpDeviceSync QLabel#lblUploadHint {
+    color: #475569;
+    padding: 0 2px 4px 2px;
+}
+
+/* ========= VSTUPY (LineEdit / Combo / Spin) ========= */
+QLineEdit,
+QComboBox,
+QSpinBox {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 4px 10px;
+    color: #111827;
+}
+
+QLineEdit:focus {
+    border: 1px solid {{ACCENT}};
+}
+
+/* ========= COMBOBOX ========= */
+QComboBox {
+    padding-right: 28px;
+}
+
+QComboBox:focus {
+    border: 1px solid {{ACCENT}};
+}
+
+QComboBox::drop-down {
+    width: 20px;
+    border: none;
+    background: transparent;
+    subcontrol-origin: border;
+    subcontrol-position: center right;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 4px;
+    selection-background-color: {{ACCENT_RGBA_20}};
+    selection-color: #111827;
+    outline: 0;
+}
+
+QComboBox QAbstractItemView::item {
+    border: 0px;
+}
+
+QFrame#qt_combobox_popup {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+/* ========= SPINBOX ========= */
+QSpinBox {
+    padding-right: 28px;
+}
+
+QSpinBox::up-button,
+QSpinBox::down-button {
+    width: 20px;
+    border: none;
+    background: transparent;
+    subcontrol-origin: border;
+}
+
+QSpinBox::up-button {
+    subcontrol-position: top right;
+}
+
+QSpinBox::down-button {
+    subcontrol-position: bottom right;
+}
+
+QSpinBox::up-arrow {
+    image: url("icons/arrow-up.png");
+}
+
+QSpinBox::down-arrow {
+    image: url("icons/arrow-down.png");
+}
+
+/* ========= TLAČIDLÁ ========= */
+QPushButton {
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 8px 14px;
+    color: #111827;
+}
+
+QPushButton:hover {
+    background-color: #e5e7eb;
+}
+
+QPushButton:pressed {
+    background-color: #d1d5db;
+}
+
+/* Secondary action */
+#btnClearButton {
+    background-color: #f8fafc;
+    border: 1px solid #e5e7eb;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+#btnClearButton:hover {
+    background-color: #eef2f7;
+}
+
+/* „Primary“ tlačidlá – Upload / Save WiFi / Upload Smart Home */
+#btnUploadESP,
+#btnSmartSendWifi,
+#btnSmartUploadConfig {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 {{ACCENT_DARK}},
+        stop:1 {{ACCENT}}
+    );
+    border: none;
+    color: #f9fafb;
+    font-weight: 600;
+}
+
+#btnUploadESP:hover,
+#btnSmartSendWifi:hover,
+#btnSmartUploadConfig:hover {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 {{ACCENT_DARKER}},
+        stop:1 {{ACCENT_LIGHT}}
+    );
+}
+
+/* Smart Home – Toggle tlačidlá nech sú kompaktné */
+#grpSmartRelays QPushButton {
+    min-width: 80px;
+}
+
+/* ========= GRID tlačidlá v náhľade ========= */
+#gridCanvas QPushButton {
+    background-color: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    color: #111827;
+    padding: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#gridCanvas QPushButton:hover {
+    background-color: #eef2f7;
+    border-color: #94a3b8;
+}
+
+#gridCanvas QPushButton:pressed {
+    background-color: #dbeafe;
+    border-color: #60a5fa;
+}
+
+/* Pozadie TFT displeja (fallback, ak sa nenastaví cez Display -> Grid) */
+#gridCanvas {
+    background-color: transparent;
+}
+
+#displayFrame {
+    background-color: #ffffff;
+    border: 3px solid #94a3b8;
+    border-radius: 18px;
+}
+
+/* Rám okolo dosky */
+#BoardBezel {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 24px;
+}
+
+/* ========= ZOZNAM PROFILOV ========= */
+
+QListWidget {
+    background-color: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 8px;
+}
+
+QListWidget::item {
+    padding: 6px 8px;
+}
+
+QListWidget::item:selected {
+    background: {{ACCENT_RGBA_20}};
+    color: #111827;
+    border-radius: 8px;
+}
+
+/* ========= HORNÝ BAR ========= */
+
+#TopBar {
+    background-color: transparent;
+    border: none;
+}
+
+#BrandBadge {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+/* ========= KNOB ========= */
+
+#Knob {
+    background-color: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #e2e8f0,
+        stop:1 #cbd5e1
+    );
+    border: 1px solid #d1d5db;
+    border-radius: 60px;
+}
+
+/* ========= SYSTEM MONITOR ========= */
+
+#SystemMonitorRoot {
+    background-color: #ffffff;
+    border-radius: 18px;
+    border: 2px solid #94a3b8;
+    padding: 14px;
+}
+
+QLabel#SystemMonitorTitle {
+    color: #64748b;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+QFrame#StatCard {
+    background-color: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+}
+
+QFrame#StatCard:hover {
+    border-color: #3b82f6;
+}
+
+QLabel#StatTitle {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+QLabel#StatPrimary {
+    color: #111827;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+QLabel#StatSecondary {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+/* Usage bar */
+#UsageBarContainer {
+    background-color: #e2e8f0;
+    border: 1px solid #94a3b8;
+    border-radius: 5px;
+    min-height: 8px;
+    max-height: 8px;
+}
+
+#UsageBarFill {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 {{ACCENT_DARK}},
+        stop:1 {{ACCENT}}
+    );
+    border-radius: 5px;
+}
+
+/* Bežné tlačidlo */
+QPushButton[gridButton="true"] {
+    border-radius: 16px;
+    border: 1px solid #cbd5e1;
+    background-color: #f1f5f9;
+    padding: 2px;
+}
+
+/* Hover */
+QPushButton[gridButton="true"]:hover {
+    background-color: #e2e8f0;
+}
+
+/* VYBRANÉ tlačidlo – highlight */
+QPushButton[gridButton="true"][selected="true"] {
+    border: 2px solid {{ACCENT}};
+    background-color: {{ACCENT_RGBA_20}};
+}

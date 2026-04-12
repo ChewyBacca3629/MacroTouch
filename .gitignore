@@ -54,6 +54,7 @@ compile_commands.json
 xref-*.html
 warn-*.txt
 localpycs/
+!MacroTouch.spec
 
 # Temporary files
 *.tmp

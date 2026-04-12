@@ -33,6 +33,14 @@ Thank you for your interest in contributing to MacroTouch! We welcome contributi
 
 Run tests with: `python -m pytest tests/`
 
+## Releases
+
+GitHub releases are built automatically through GitHub Actions.
+
+1. Update the version tag you want to publish.
+2. Push a tag like `v1.0.1`.
+3. The workflow in `.github/workflows/release.yml` will build Windows and Linux artifacts and upload them to GitHub Releases.
+
 ## Submitting Changes
 
 1. Create a feature branch: `git checkout -b feature/your-feature-name`

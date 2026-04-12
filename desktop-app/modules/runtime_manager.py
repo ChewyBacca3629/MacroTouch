@@ -53,6 +53,8 @@ class RuntimeManager:
         if enabled:
             desktop_file.parent.mkdir(parents=True, exist_ok=True)
             icon_path = self.app_root / "icons" / "MacroTouch.ico"
+            if not icon_path.exists():
+                icon_path = self.app_root / "assets" / "MacroTouch.ico"
             icon_line = f"Icon={icon_path}\n" if icon_path.exists() else ""
             content = (
                 "[Desktop Entry]\n"

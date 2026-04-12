@@ -979,6 +979,8 @@ uint16_t mediaInactiveColor(MediaSource src) {
     # --- ikony ---
     possible_exts = [".bmp", ".png", ".jpg", ".jpeg", ".ico", ".webp", ".gif"]
     icons_dir = (Path(__file__).resolve().parent.parent / "icons")
+    if not icons_dir.is_dir():
+        icons_dir = Path(__file__).resolve().parent.parent / "assets"
     icon_key_name: dict[tuple[str, int], str] = {}
     icon_frame_ptrs: dict[tuple[str, int], list[str]] = {}
     icon_frame_key_names: dict[tuple[str, int], list[str]] = {}

@@ -4931,7 +4931,16 @@ class MacroTouchApp(QMainWindow):
 
     def _resource_path(self, *parts: str) -> Path:
         base = getattr(self, "app_root", Path(__file__).resolve().parent)
-        return Path(base, *parts)
+        candidate = Path(base, *parts)
+        if candidate.exists():
+            return candidate
+
+        if parts and parts[0] == "icons":
+            fallback = Path(base, "assets", *parts[1:])
+            if fallback.exists():
+                return fallback
+
+        return candidate
 
     def _setup_tray(self) -> None:
         if not QSystemTrayIcon.isSystemTrayAvailable():

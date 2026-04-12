@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=MacroTouch
+Comment=MacroTouch desktop controller
+Exec=__APP_EXEC__
+Icon=__APP_ICON__
+Terminal=false
+Categories=Utility;
+StartupNotify=true
